@@ -52,10 +52,3 @@ function evalResponse(correctAnswer, questionNum) {
 for (let i = 0; i < 5; i++) {
   evalResponse(answerKey[i], i);
 }
-
-// const questionOne = prompt(questionList[0]);
-// console.log('FIRE ONE', posResponse.indexOf(questionOne.toLowerCase()));
-// evalResponse(questionOne, true, 0);
-// const questionTwo = prompt(questionList[1]);
-// console.log('FIRE TWO', posResponse.indexOf(questionTwo.toLowerCase()));
-// evalResponse(questionTwo, false, 1);
