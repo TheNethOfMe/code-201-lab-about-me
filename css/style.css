@@ -1,4 +1,27 @@
+html {
+  background: url("../img/background.png") no-repeat center center fixed;
+  background-size: cover;
+  font-family: sans-serif;
+}
+
 h1 {
   color: blue;
   text-align: center;
+}
+
+#neth-facts {
+  background-color: rgb(43, 49, 58, 0.8);
+  color: salmon;
+  margin: 5px auto;
+  padding: 6px;
+  text-align: center;
+  width: 90%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  padding: 5px;
 }

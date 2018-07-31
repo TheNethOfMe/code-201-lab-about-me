@@ -48,6 +48,7 @@ function evalResponse(correctAnswer, questionNum) {
   alert(response);
 }
 
+// runs the evalResponse function five times (one for each question)
 for (let i = 0; i < 5; i++) {
   evalResponse(answerKey[i], i);
 }
