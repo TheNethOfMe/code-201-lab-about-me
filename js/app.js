@@ -38,35 +38,36 @@ for (let i = 0; i < 7; i++) {
   console.log(`QUESTION ${i + 1}`);
   console.log(questionList[i]);
   if (i === 5) {
-    // if i = 5, start the sixth quesiton
-    let chances = 0;
-    let isCorrect = false;
-    while (chances < 4 && !isCorrect) {
-      // send user the question and let them know how many guesses they have left
-      const questionSix = parseInt(prompt(questionList[i]));
-      // check if user's guess was correct, too high, or too low
-      if (questionSix === 8) {
-        // on correct guess, we escape the loop
-        alert('Wow, you got it');
-        console.log(`The user guessed correctly after guessing ${chances + 1} ${chances === 0 ? 'time' : 'times'}.`);
-        isCorrect = true;
-        score++;
-        // break;
-        // incorrect guesses increment the chances by one and alert user with feedback
-      } else if (questionSix < 8) {
-        chances++;
-        chances < 4 && alert(`Nope. It's more than that. You have ${4 - chances} ${chances === 3 ? 'guess' : 'guesses'} left.`);
-      } else if (questionSix > 8) {
-        chances++;
-        chances < 4 && alert(`No, not that many. You have ${4 - chances} ${chances === 3 ? 'guess' : 'guesses'} left.`);
-      } else {
-        chances++;
-        chances < 4 && alert(`My dude, you have to enter a number. You have ${4 - chances} ${chances === 3 ? 'guess' : 'guesses'} left.`);
-      }
-    }
-    // this alert displays if user failed to guess correctly
-    !isCorrect && alert('Sorry. The correct answer was 8.');
-    !isCorrect && console.log('The user failed to guess correctly.');
+    sixthQ(i);
+    // // if i = 5, start the sixth quesiton
+    // let chances = 0;
+    // let isCorrect = false;
+    // while (chances < 4 && !isCorrect) {
+    //   // send user the question and let them know how many guesses they have left
+    //   const questionSix = parseInt(prompt(questionList[i]));
+    //   // check if user's guess was correct, too high, or too low
+    //   if (questionSix === 8) {
+    //     // on correct guess, we escape the loop
+    //     alert('Wow, you got it');
+    //     console.log(`The user guessed correctly after guessing ${chances + 1} ${chances === 0 ? 'time' : 'times'}.`);
+    //     isCorrect = true;
+    //     score++;
+    //     // break;
+    //     // incorrect guesses increment the chances by one and alert user with feedback
+    //   } else if (questionSix < 8) {
+    //     chances++;
+    //     chances < 4 && alert(`Nope. It's more than that. You have ${4 - chances} ${chances === 3 ? 'guess' : 'guesses'} left.`);
+    //   } else if (questionSix > 8) {
+    //     chances++;
+    //     chances < 4 && alert(`No, not that many. You have ${4 - chances} ${chances === 3 ? 'guess' : 'guesses'} left.`);
+    //   } else {
+    //     chances++;
+    //     chances < 4 && alert(`My dude, you have to enter a number. You have ${4 - chances} ${chances === 3 ? 'guess' : 'guesses'} left.`);
+    //   }
+    // }
+    // // this alert displays if user failed to guess correctly
+    // !isCorrect && alert('Sorry. The correct answer was 8.');
+    // !isCorrect && console.log('The user failed to guess correctly.');
   } else if (i === 6) {
     // if i === 6, start the final question
     let chances = 0;
@@ -121,6 +122,7 @@ for (let i = 0; i < 7; i++) {
   }
 }
 
+// function for the first five questions
 function firstFiveQ(questionNum){
   // for questions one through five
   // gets a question from the list and saves the user's response
@@ -149,6 +151,38 @@ function firstFiveQ(questionNum){
   alert(response);
 }
 
+// function for the sixth question
+function sixthQ(questionNum){
+  // if i = 5, start the sixth quesiton
+  let chances = 0;
+  let isCorrect = false;
+  while (chances < 4 && !isCorrect) {
+    // send user the question and let them know how many guesses they have left
+    const questionSix = parseInt(prompt(questionList[questionNum]));
+    // check if user's guess was correct, too high, or too low
+    if (questionSix === 8) {
+      // on correct guess, we escape the loop
+      alert('Wow, you got it');
+      console.log(`The user guessed correctly after guessing ${chances + 1} ${chances === 0 ? 'time' : 'times'}.`);
+      isCorrect = true;
+      score++;
+      // break;
+      // incorrect guesses increment the chances by one and alert user with feedback
+    } else if (questionSix < 8) {
+      chances++;
+      chances < 4 && alert(`Nope. It's more than that. You have ${4 - chances} ${chances === 3 ? 'guess' : 'guesses'} left.`);
+    } else if (questionSix > 8) {
+      chances++;
+      chances < 4 && alert(`No, not that many. You have ${4 - chances} ${chances === 3 ? 'guess' : 'guesses'} left.`);
+    } else {
+      chances++;
+      chances < 4 && alert(`My dude, you have to enter a number. You have ${4 - chances} ${chances === 3 ? 'guess' : 'guesses'} left.`);
+    }
+  }
+  // this alert displays if user failed to guess correctly
+  !isCorrect && alert('Sorry. The correct answer was 8.');
+  !isCorrect && console.log('The user failed to guess correctly.');
+}
 
 console.log(`The user's final score is ${score}/7`);
 alert(`Thanks for playing, ${userName}. Here is your final score: ${score}/7`);
