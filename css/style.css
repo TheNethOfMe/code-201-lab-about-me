@@ -38,7 +38,7 @@ p {
 }
 
 .list-panel {
-  background-color: rgb(43, 49, 58, 0.8);
+  background-color: rgba(43, 49, 58, 0.8);
   color: salmon;
   margin: 5px auto;
   padding: 6px;
