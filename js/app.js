@@ -92,33 +92,63 @@ for (let i = 0; i < 7; i++) {
     !isCorrect && alert('Sorry. The correct answers were Idaho and Missouri.');
     !isCorrect && console.log('The user failed to guess correctly.');
   } else {
-    // for questions one through five
-    // gets a question from the list and saves the user's response
-    const userResponse = prompt(questionList[i]);
-    console.log(`Response: ${userResponse}`);
-    let result;
-    let response;
-    // find out if the user gave the correct answer
-    if (answerKey[i]) {
-      // the correct answer was yes
-      result = posResponse.includes(userResponse.toLowerCase());
-    } else {
-      // the correct answer was no
-      result = negResponse.includes(userResponse.toLowerCase());
-    }
-    // create the response to the user based on their answer
-    if (result) {
-      response = 'Correct! ' + responseList[i];
-      console.log('The user was correct.');
-      score++;
-    } else {
-      response = 'Wrong! ' + responseList[i];
-      console.log('The user was incorrect.');
-    }
-    console.log(`Answer: ${responseList[i]}`);
-    alert(response);
+    firstFiveQ(i);
+  //   // for questions one through five
+  //   // gets a question from the list and saves the user's response
+  //   const userResponse = prompt(questionList[i]);
+  //   console.log(`Response: ${userResponse}`);
+  //   let result;
+  //   let response;
+  //   // find out if the user gave the correct answer
+  //   if (answerKey[i]) {
+  //     // the correct answer was yes
+  //     result = posResponse.includes(userResponse.toLowerCase());
+  //   } else {
+  //     // the correct answer was no
+  //     result = negResponse.includes(userResponse.toLowerCase());
+  //   }
+  //   // create the response to the user based on their answer
+  //   if (result) {
+  //     response = 'Correct! ' + responseList[i];
+  //     console.log('The user was correct.');
+  //     score++;
+  //   } else {
+  //     response = 'Wrong! ' + responseList[i];
+  //     console.log('The user was incorrect.');
+  //   }
+  //   console.log(`Answer: ${responseList[i]}`);
+  //   alert(response);
   }
 }
+
+function firstFiveQ(questionNum){
+  // for questions one through five
+  // gets a question from the list and saves the user's response
+  const userResponse = prompt(questionList[questionNum]);
+  console.log(`Response: ${userResponse}`);
+  let result;
+  let response;
+  // find out if the user gave the correct answer
+  if (answerKey[questionNum]) {
+    // the correct answer was yes
+    result = posResponse.includes(userResponse.toLowerCase());
+  } else {
+    // the correct answer was no
+    result = negResponse.includes(userResponse.toLowerCase());
+  }
+  // create the response to the user based on their answer
+  if (result) {
+    response = 'Correct! ' + responseList[questionNum];
+    console.log('The user was correct.');
+    score++;
+  } else {
+    response = 'Wrong! ' + responseList[questionNum];
+    console.log('The user was incorrect.');
+  }
+  console.log(`Answer: ${responseList[questionNum]}`);
+  alert(response);
+}
+
 
 console.log(`The user's final score is ${score}/7`);
 alert(`Thanks for playing, ${userName}. Here is your final score: ${score}/7`);
