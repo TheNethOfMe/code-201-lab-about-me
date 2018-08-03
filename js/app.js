@@ -93,13 +93,13 @@ function sixthQ(questionNum){
       // incorrect guesses increment the chances by one and alert user with feedback
     } else if (questionSix < 8) {
       chances--;
-      chances < 4 && alert(`Nope. It's more than that. You have ${chances} ${chances === 1 ? 'guess' : 'guesses'} left.`);
+      chances > 0 && alert(`Nope. It's more than that. You have ${chances} ${chances === 1 ? 'guess' : 'guesses'} left.`);
     } else if (questionSix > 8) {
       chances--;
-      chances < 4 && alert(`No, not that many. You have ${chances} ${chances === 1 ? 'guess' : 'guesses'} left.`);
+      chances > 0 && alert(`No, not that many. You have ${chances} ${chances === 1 ? 'guess' : 'guesses'} left.`);
     } else {
       chances--;
-      chances < 4 && alert(`My dude, you have to enter a number. You have ${chances} ${chances === 1 ? 'guess' : 'guesses'} left.`);
+      chances > 0 && alert(`My dude, you have to enter a number. You have ${chances} ${chances === 1 ? 'guess' : 'guesses'} left.`);
     }
   }
   // this alert displays if user failed to guess correctly
@@ -125,7 +125,7 @@ function seventhQ(questionNum){
     } else {
       // incorrecct response alerts the user and increments chances by one
       chances--;
-      chances < 4 && alert(`Nope. Not one of them. You have ${chances} ${chances === 1 ? 'guess' : 'guesses'} left.`);
+      chances > 0 && alert(`Nope. Not one of them. You have ${chances} ${chances === 1 ? 'guess' : 'guesses'} left.`);
     }
   }
   // this alert displays if user failed to guess correctly
